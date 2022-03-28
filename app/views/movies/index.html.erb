@@ -1,0 +1,44 @@
+<div id="movies-index">
+  <div class="content">
+    <h1>
+      The Best Movies
+    </h1>
+    <div id="pages-ctrls-container">
+      <div>
+       <%= "Page #{meta.page} of #{meta.total_pages}" %>
+      </div>
+      <div id="ctrls">
+        <% if meta.page.to_i > 1 %>
+          <a href=<%= movies_path(page: meta.page.to_i - 1) %>>
+            << previous
+          </a>
+        <% end %>
+        &nbsp;&nbsp;
+        <% if meta.page.to_i < meta.total_pages.to_i %>
+          <a href=<%= movies_path(page: meta.page.to_i + 1) %>>
+            next >>
+          </a>
+        <% end %>
+      </div>
+    </div>
+    <div class="movies-container">
+      <div class="movies-list">
+        <% movies.each do |movie| %>
+          <div class="movie-item">
+            <img class="movie-poster" src=<%= movie.poster_url(size: 'w92') %> />
+            <div class="movie-info">
+              <div class="section title">
+                <a href=<%= movie_path(movie.id) %>>
+                  <%= movie.title %>
+                </a>
+              </div>
+              <div class="section year">
+                <%= movie.release_year %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

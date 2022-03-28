@@ -1,0 +1,68 @@
+<div id="movies-show">
+  <div class="content">
+    <h1>
+      <%= movie.title %>
+    </h1>
+    <div id="movie-details">
+      <img class="movie-poster" src=<%= movie.poster_url(size: 'w342') %> />
+      <div class="movie-info">
+        <div class="section">
+          <% movie.genres.each do |genre|  %>
+            <div class="genre-tag">
+              <%= genre.name %>
+            </div>
+          <% end %>
+        </div>
+        <div class="section">
+          <div>
+            <b>Rating</b>
+          </div>
+          <div>
+            <%= movie.vote_average %>/10 (<%= movie.vote_count %> voted)
+          </div>
+        </div>
+        <div class="section">
+          <i><%= movie.tagline %></i>
+        </div>
+        <div class="section">
+          <div>
+            <b>Overview</b>
+          </div>
+          <div>
+            <%= movie.overview  %>
+          </div>
+        </div>
+        <div class="section">
+          <div>
+            <b>Release date</b>
+          </div>
+          <div>
+            <%= movie.release_date  %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h2>
+      Reviews
+    </h2>
+    <% if reviews.any? %>
+      <div id="reviews-container">
+        <% reviews.each do |review| %>
+          <div class="review-item">
+            <div class="author-section">
+              <div>
+                Author: <b><%= review.author %></b>
+              </div>
+            </div>
+            <div class="content-section">
+              <%= review.content %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% else %>
+      No reviews found.
+    <% end %>
+  </div>
+</div>

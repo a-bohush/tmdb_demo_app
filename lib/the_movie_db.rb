@@ -1,5 +1,6 @@
 require 'ostruct'
 require 'the_movie_db/http'
+require 'the_movie_db/query'
 require 'the_movie_db/discover/movie'
 require 'the_movie_db/movie/details'
 
@@ -21,7 +22,7 @@ module TheMovieDb
       TheMovieDb::Discover::Movie.new(prepare_params(params))
     end
 
-    def movie_details_query(options={})
+    def movie_details_query(params={})
       TheMovieDb::Movie::Details.new(prepare_params(params))
     end
 

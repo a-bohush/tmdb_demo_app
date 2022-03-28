@@ -1,0 +1,31 @@
+#movies-index {
+  #pages-ctrls-container {
+    display: flex;
+    margin-bottom: 8px;
+
+    #ctrls {
+      margin-left: auto;
+    }
+  }
+
+  .movies-container {
+    .movies-list {
+      .movie-item {
+        display: flex;
+        margin-bottom: 8px;
+
+        .movie-info {
+          padding: 8px;
+
+          .section {
+            margin-bottom: 4px;
+          }
+
+          .title {
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+  }
+}

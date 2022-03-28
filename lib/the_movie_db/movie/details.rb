@@ -1,20 +1,13 @@
 module TheMovieDb
   module Movie
-    class Details
-      attr_reader :result, :error
-
+    class Details < TheMovieDb::Query
       def initialize(params={})
-        @params = params.symbolize_keys.slice(:api_key, :movie_id)
-      end
-
-      def execute
-        response = TheMovieDb::HTTP.get(url, @params)
-        if response.success?
-          @result = response.body
-          true
-        else
-          # TODO: setup error
-        end
+        @params = params.symbolize_keys.slice(
+          :api_key,
+          :movie_id,
+          :language,
+          :append_to_response
+        )
       end
 
       private

@@ -1,0 +1,39 @@
+#movies-show {
+  #movie-details {
+    display: flex;
+
+    .movie-info {
+      padding: 8px;
+
+      .section {
+        margin-bottom: 16px;
+      }
+
+      .genre-tag {
+        display: inline-block;
+        padding: 4px;
+        margin-right: 4px;
+        border-style: solid;
+        border-radius: 8px;
+        border-color: black;
+        border-width: thin;
+      }
+    }
+  }
+
+  #reviews-container {
+    .review-item {
+      margin-bottom: 8px;
+
+      .author-section {
+        padding: 8px;
+        background-color: #d3d3d3;
+      }
+
+      .content-section {
+        padding: 8px;
+        background-color: #f1f1f1;
+      }
+    }
+  }
+}
